@@ -13,3 +13,15 @@ def freezeWhat(wb, row, col):
 
 def xltodf(sheetobject, a1string):
     return sheetobject.range(a1string).options(pd.DataFrame, expand='table').value
+
+
+def expandTable(sheetobject, a1string, convert):
+    return sheetobject.range(a1string).options(convert, expand='table').value
+
+
+def autofitColumn(sht):
+    sht.autofit('c')
+
+
+def autofitRow(sht):
+    sht.autofit('r')
